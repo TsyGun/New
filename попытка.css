@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+body {
+    font-family: 'Sigmar One', cursive;
+    text-align: left;
+    color: rgba(174, 155, 255);
+    margin-left: 400px;
+    margin-right: 400px;
+    font-size: 14pt;
+}
+
+.main-text {
+    text-align: center;
+    background: url(text2.jpg);
+    font-size: 100px;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 25s infinite ease-in-out;
+    animation-direction: alternate;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.205);
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate {
+    from {
+        background-position: 0, 0;
+    }
+    to {
+        background-position: 100%, 100%;
+    }
+}
+
+.block {
+    background: rgba(0, 0, 0, 0.75);
+    height: auto;
+    z-index: -1;
+    width: 1200;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -2;
+}
+
+.center-img {
+    text-align: center;
+    margin-left: 400px;
+    margin-right: 400px;
+    -moz-box-shadow: 0px 0px 14px rgba(241, 131, 255);
+    -webkit-box-shadow: 0px 0px 14px rgba(241, 131, 255);
+    box-shadow: 0px 0px 14px;
+    margin: 30px;
+}
+
+h2 {
+    font-size: 25pt;
+    text-align: center;
+    text-decoration: underline;
+    color: rgba(174, 155, 255);
+}
+
+.list5b {
+    padding: 0;
+    list-style: none;
+}
+
+.list5b li {
+    position: relative;
+    padding: 10px 30px;
+    background: linear-gradient(to left, rgba(93, 76, 94, 0.315) 0%, rgba(93, 76, 94, 0.315), rgba(93, 76, 94, 0.315));
+    border: 2px solid rgba(0, 0, 0);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+.list5b li:hover {
+    border: 2px solid rgb(107, 46, 114);
+}
+
+.list5b li:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    background: linear-gradient(to left, rgba(182, 166, 255, 0.315) 0%, rgba(182, 166, 255, 0.315), rgba(182, 166, 255, 0.315));
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+.list5b li:hover:before {
+    width: 100%;
+    opacity: 1;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.title {
+    color: rgb(174, 155, 255);
+    width: 13ch;
+    font-family: monospace;
+    font-size: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid rgb(255, 123, 0);
+    animation: flashing-border 0.75s step-end infinite, printed-key 7s steps(13);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing-border {
+    0% {
+        border-color: rgb(255, 123, 0);
+    }
+    50% {
+        border-color: rgba(255, 123, 0, 0);
+    }
+    100% {
+        border-color: rgb(255, 123, 0);
+    }
+}
+
+@keyframes printed-key {
+    from {
+        width: 0;
+    }
+}
+
+.sprite-container {
+    display: flex;
+    height: 123px;
+    width: 1136;
+    align-items: center;
+    margin: 0;
+}
+
+.sprite-image {
+    height: 123px;
+    width: 70px;
+    background: url(smur-sprite.png) 0px 0px;
+    animation: play 0.8s steps(16) infinite, step 10s linear infinite;
+    position: absolute;
+    left: 400px;
+    animation-play-state: running;
+}
+
+@keyframes play {
+    100% {
+        background-position: -1136px;
+    }
+}
+
+@keyframes step {
+    100% {
+        left: 80%;
+    }
+}
+
+.porfolio ul,
+.porfolio li {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.porfolio li {
+    display: inline-block;
+    width: 390px;
+    position: relative;
+    overflow: hidden;
+}
+
+.porfolio img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.descr {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(255, 255, 255);
+    padding-top: 10px;
+    text-align: left;
+    opacity: 0;
+    top: 100%;
+    -webkit-transition: all 3s;
+    -o-transition: all 3s;
+    transition: all 3s;
+    animation-delay: 2s;
+}
+
+.porfolio li:hover .descr {
+    display: inline-block;
+    opacity: 1;
+    top: 0;
+}
+
+a {
+    color: rgb(246, 148, 255);
+    text-decoration: none;
+}
